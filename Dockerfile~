@@ -1,4 +1,4 @@
-FROM postgres:9.2
+FROM postgres
 USER postgres
 RUN /etc/init.d/postgresql start
 COPY initpgdb.sh /
