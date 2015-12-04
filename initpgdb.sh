@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function wait_for_database() {
-  until psql --help &> /dev/null`; do
+  until psql --help &> /dev/null; do
     sleep 1
   done
 }
