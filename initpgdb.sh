@@ -10,7 +10,7 @@ echo "=> Starting DBMS"
 /etc/init.d/postgresql start > /dev/null &
 
 echo "=> Waiting for DBMS"
-wait_for_server
+wait_for_database
 
 echo "=> Executing the commands"
 psql -d template1 -U postgres --command "CREATE DATABASE wildflytest;"
