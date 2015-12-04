@@ -1,6 +1,7 @@
 FROM postgres:9.2
 USER postgres
-RUN /etc/init.d/postgresql start
-RUN psql --username=postgres --command "CREATE USER adminjk8vliu WITH PASSWORD 'Gw9kVkChXCqp'"
-RUN psql --username=postgres --command "CREATE DATABASE wildflytest"
-RUN psql --username=postgres --command "GRANT ALL PRIVILEGES ON DATABASE wildflytest to adminjk8vliu"
+RUN /etc/init.d/postgresql start && \
+    psql --command "CREATE DATABASE wildflytest;" && \
+    psql --command "CREATE USER adminjk8vliu WITH SUPERUSER PASSWORD 'Gw9kVkChXCqp';" &&\
+    psql --command "GRANT ALL PRIVILEGES ON DATABASE wildflytest TO adminjk8vliu;"
+
