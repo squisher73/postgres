@@ -1,5 +1,4 @@
 FROM postgres:9.2
-USER postgres
 RUN pg_createcluster 9.2 main --start &&\ 
  /etc/init.d/postgresql start &\
  sleep 60s &&\
