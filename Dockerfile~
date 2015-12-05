@@ -1,6 +1,7 @@
 FROM postgres:9.2
 USER postgres
-RUN /etc/init.d/postgresql start &\
+RUN pg_createcluster 9.2 main --start &&\ 
+ /etc/init.d/postgresql start &\
  sleep 60s &&\
  psql -d template1 -U postgres --command "CREATE DATABASE wildflytest;" &&\
  psql -d template1 -U postgres --command "CREATE USER adminjk8vliu WITH SUPERUSER PASSWORD 'Gw9kVkChXCqp';" &&\
