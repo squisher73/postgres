@@ -1,4 +1,4 @@
-FROM postgres:latest
+FROM postgres:9.2
 COPY initpgdb.sh /
 #RUN pg_createcluster -u postgres 9.2 main --start &&\ 
 # /etc/init.d/postgresql start &\
